@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Lakshya CTF</title>
+    <title>DER3 LABS</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
@@ -48,7 +48,7 @@
                         @endif
 
                         @else
-                        <a href="{{route("home")}}" class="p-3 text-decoration-none text-light bold">Home</a>
+                        <a href="{{route("home")}}" class="p-3 text-decoration-none text-light bold">Challenges</a>
                         <a href="{{route("score")}}" class="p-3 text-decoration-none text-white bold">ScoreBoard</a>
                         <a class="p-3 text-decoration-none text-white bold" href="{{ route('logout') }}"
                            onclick="event.preventDefault();

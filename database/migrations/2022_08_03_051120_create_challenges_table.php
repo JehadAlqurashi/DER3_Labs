@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->integer('score');
             $table->string('description');
-            $table->string('category');
+            $table->enum("category",['Web','Osint','Crypto']);
             $table->string('hint');
             $table->timestamps();
         });
