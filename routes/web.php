@@ -21,4 +21,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get("/score",[Controllers\ScoreController::class,"index"])->name("score")->middleware("auth");
+
+
+
 ?>
