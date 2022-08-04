@@ -17,8 +17,7 @@
     </a>
     <nav class="navbar">
         <div class="search-box">
-            <input type="text" placeholder="Hey visiteur, tu cherches quelque chose ?" type="text">
-            <i class='bx bx-search'></i>
+
         </div>
     </nav>
     <div class="icons">

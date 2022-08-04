@@ -1,9 +1,13 @@
 @extends("dashboard.sidebar.sidebar")
 @section("content")
+
     <div style="background-color:white;margin: 30px">
-        @if(session()->has('success'))
+        @if(session("success"))
         <div class="alert alert-success">{{session()->get('success')}}</div>
         @endif
+            <div style="margin-top:20px;">
+                <a href="{{route("dashboard.users.create")}}" class="btn btn-success" style="margin: 10px;font-size: 13px">Create User</a>
+            </div>
 
         <table class="table" style="font-size: 20px">
             <thead>
@@ -22,7 +26,7 @@
                 <td>{{$user->email}}</td>
                 <td>
                     <a href="{{route("dashboard.users.edit",$user->id)}}"><button type="submit" class="btn btn-success">Edit</button></a>
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <a href="{{route("dashboard.users.delete",$user->id)}}"><button type="submit" class="btn btn-danger">Delete</button></a>
 
                 </td>
             </tr>
