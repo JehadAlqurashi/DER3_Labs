@@ -12,13 +12,20 @@ class Challenge extends Model{
     protected $fillable = [
         'score',
         'title',
-        'flag'
+        'flag',
+        'description',
+        'category',
+        'hint',
     ];
 
-    public function attachments(){
+     /*public function attachments(){
 
         return $this->belongsTo('App\Models\Attachment');
     }
+
+    /* public function solved(){
+        return $this->belongsTo('App\Models\Solve', 'challenge_id');
+    } */
 
 
 

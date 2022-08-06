@@ -5,9 +5,7 @@
         @if(session("success"))
         <div class="alert alert-success">{{session()->get('success')}}</div>
         @endif
-            <div style="margin-top:20px;">
-                <a href="{{route("dashboard.users.create")}}" class="btn btn-success" style="margin: 10px;font-size: 13px">Create User</a>
-            </div>
+
 
         <table class="table" style="font-size: 20px">
             <thead>
@@ -34,5 +32,12 @@
 
             </tbody>
         </table>
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <a href="{{route("dashboard.users.create")}}" class="btn btn-success" style="margin: 10px;font-size: 13px">Create User</a>
+                    </div>
+                </div>
+            
     </div>
 @endsection

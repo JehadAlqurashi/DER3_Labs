@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Challenge;
 use App\Models\Solved;
+use App\Models\User;
 
 class ScoreController extends Controller
 {
@@ -68,6 +69,14 @@ class ScoreController extends Controller
             return view('hackerboard')->with('scores',$score_sorted);
         }
 
+
+        public function hackerboard(){
+
+//        $user = User::get();
+//        return $user;
+
+
+        }
 
 
 }

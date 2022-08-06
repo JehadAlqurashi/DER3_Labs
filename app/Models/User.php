@@ -22,6 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+    public $timestamps = false;
     use Notifiable;
 
     const ADMIN_TYPE = "Administrator";
@@ -50,4 +51,17 @@ class User extends Authenticatable
     {
         return $this->user_type === self::ADMIN_TYPE;
     }
+
+
+    /* public function solved(){
+
+        return $this->belongsTo('App\Models\Solved','challenge_id');
+
+    }
+
+    public function users(){
+
+        return $this->belongsTo('App\Models\Challenge','user_id');
+
+    }*/
 }

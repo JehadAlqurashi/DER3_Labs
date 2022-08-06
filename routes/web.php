@@ -20,7 +20,7 @@ Route::get("/", function (){
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get("/score",[App\Http\Controllers\ScoreController::class,"index"])->name("score")->middleware("auth");
+Route::get("/score",[App\Http\Controllers\ScoreController::class,"hackerboard"])->name("score")->middleware("auth");
 Route::group(['prefix'=>"dashboard"],function(){
     Route::get("/",[App\Http\Controllers\DashboardController::class,"index"]);
     ###################### users #######################
@@ -42,9 +42,23 @@ Route::group(['prefix'=>"dashboard"],function(){
 
     ###################### challenges #######################
     Route::get("/challenge",[App\Http\Controllers\DashboardController::class,"challenge"])->name("dashboard.challenge");
-    Route::get("/challenge/{id}",[App\Http\Controllers\DashboardController::class,"challEdit"])->name("dashboard.challenge.edit");
+    Route::get("/challenge/edit/{id}",[App\Http\Controllers\DashboardController::class,"challEdit"])->name("dashboard.challenge.edit");
+    Route::post("/challenge/update",[App\Http\Controllers\DashboardController::class,"challUpdate"])->name("dashboard.challenge.update");
+    Route::get("/challenge/delete/{id}",[App\Http\Controllers\DashboardController::class,"challDelete"])->name("dashboard.challenge.delete");
+    Route::get("/challenge/create",[App\Http\Controllers\DashboardController::class,"challCreate"])->name("dashboard.challenge.create");
+    Route::post("/challenge/new",[App\Http\Controllers\DashboardController::class,"challNew"])->name("dashboard.challenge.newChall");
 
     ###################### challenges #######################
+
+
+
+
+
+
+
+
+    ##################### score routes ######################
+
 });
 
 

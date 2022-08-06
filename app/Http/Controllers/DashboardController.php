@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\EditChallRequest;
+use App\Http\Requests\NewChallRequest;
 use App\Models\User;
 use App\Models\Challenge;
 use App\Http\Requests\EditUserRequest;
@@ -62,5 +64,32 @@ class DashboardController extends Controller
         return view("dashboard.challEdit",compact("chall"));
 
     }
+    public function challUpdate(EditChallRequest $request){
+        $challenge = Challenge::find($request->id);
+        $challenge->update($request->all());
+        return redirect()->route('dashboard.challenge')->with(['success'=>"The Changes Has Been Updated"]);
+
+    }
+    public function challDelete($id){
+        Challenge::whereId($id)->delete();
+        return redirect()->back()->with(['success' =>" Delete Challenge Successfully"]);
+
+    }
+
+
+    public function challCreate(){
+         //$chall = Challenge::select("id","title","score","category","description","hint")->get();
+
+
+        return view('dashboard.challCreate');
+    }
+
+        public function ChallNew(NewChallRequest $request){
+
+        Challenge::create($request->all());
+            return redirect()->route("dashboard.challenge");
+
+        }
+
     ######################Challenge######################
 }
