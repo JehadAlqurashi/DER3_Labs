@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>DER3 LABS</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/allxf.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
 
@@ -38,37 +39,55 @@
                     </a>
                 </div>
                 <div class="navbar-nav ml-auto">
-                    @guest
-                    @if(Route::has('login'))
-                            <a href="{{route("login")}}" class="p-3 text-decoration-none text-white bold">Login</a>
-                        @endif
-                        @if(Route::has("register"))
-                            <a href="{{route("register")}}" class="p-3 text-decoration-none text-white bold">Register</a>
-
-                        @endif
-
-                        @else
-                        <a href="{{route("home")}}" class="p-3 text-decoration-none text-light bold">Challenges</a>
-                        <a href="{{route("score")}}" class="p-3 text-decoration-none text-white bold">ScoreBoard</a>
-                        <a class="p-3 text-decoration-none text-white bold" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-
-
-                    @endguest
                 </div>
             </div>
         </nav>
 
     </div>
 </div>
-@yield("content")
+
+<div class="jumbotron bg-transparent mb-0 pt-3 radius-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8">
+                <h1 class="display-1 bold color_white content__title">ADMIN LOGIN<span class="vim-caret">&nbsp;</span></h1>
+                <p class="text-grey text-spacey hackerFont lead mb-5">
+                    Type your credentials to conquer the world
+                </p>
+                <div class="row hackerFont">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <form action="{{ route('admin.login') }}" method="post">
+                                @csrf
+                                <input type="email" name="email" class="form-control" id="team_name" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                            @error("email")
+                            <small id="passHelp" class="form-text text-muted">{{$message}}</small>
+
+                            @enderror
+                            @error("password")
+                            <small id="passHelp" class="form-text text-muted">{{$message}}</small>
+
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-8">
+                <button class="btn btn-outline-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left typewriter" onclick="window.location.href='instructions.html';">
+                    <h4>Login</h4>
+                </button>
+                <form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -80,3 +99,4 @@
 </body>
 
 </html>
+

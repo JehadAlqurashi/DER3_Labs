@@ -32,12 +32,15 @@
 
             </tbody>
         </table>
+
+
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="col text-center">
-                        <a href="{{route("dashboard.users.create")}}" class="btn btn-success" style="margin: 10px;font-size: 13px">Create User</a>
+                        <a href="{{route('dashboard.users.create')}}" class="btn btn-outline-dark btn-lg btn-block">Create New User</a>
+
                     </div>
                 </div>
-            
-    </div>
+            </div>
 @endsection

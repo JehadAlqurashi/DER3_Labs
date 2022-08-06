@@ -15,6 +15,7 @@
     <a href="#" class="logo">
         <img src="img/AppKD.svg" alt="">
     </a>
+    <title>Dashboard</title>
     <nav class="navbar">
         <div class="search-box">
 
@@ -33,12 +34,6 @@
 </header>
 <div class="sidebar">
     <ul class="nav-links">
-        <li>
-            <div id="aHOME" class="active">
-                <i class='bx bx-grid-alt'></i>
-                <span class="links_name">Dashboard</span>
-            </div>
-        </li>
         <li>
             <div id="aCHIFFRAGE" class="">
                 <i class="fa-solid fa-user"></i>

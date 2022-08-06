@@ -20,9 +20,13 @@ Route::get("/", function (){
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get("/score",[App\Http\Controllers\ScoreController::class,"hackerboard"])->name("score")->middleware("auth");
-Route::group(['prefix'=>"dashboard"],function(){
-    Route::get("/",[App\Http\Controllers\DashboardController::class,"index"]);
+Route::get("/admin",[App\Http\Controllers\AdminLoginController::class,"index"]);
+Route::post("/admin/login",[App\Http\Controllers\AdminLoginController::class,"login"])->name("admin.login");
+Route::group(["middleware" =>"auth:web"],function (){
+    Route::get("/score",[App\Http\Controllers\ScoreController::class,"index"])->name("score");
+
+});
+Route::group(['prefix'=>"dashboard",'middleware'=>['auth:admin']],function(){
     ###################### users #######################
     Route::get("/users",[App\Http\Controllers\DashboardController::class, "users"])->name("dashboard.users"); // to show users
 
@@ -50,17 +54,6 @@ Route::group(['prefix'=>"dashboard"],function(){
 
     ###################### challenges #######################
 
-
-
-
-
-
-
-
-    ##################### score routes ######################
-
 });
-
-
 
 ?>
