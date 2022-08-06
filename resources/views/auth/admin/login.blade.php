@@ -60,17 +60,23 @@
                             <form action="{{ route('admin.login') }}" method="post">
                                 @csrf
                                 <input type="email" name="email" class="form-control" id="team_name" placeholder="Email">
+                                @error("email")
+                                <small id="passHelp" class="form-text text-danger">{{$message}}</small>
+
+                            @enderror
                         </div>
                         <div class="form-group">
                             <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-                            @error("email")
-                            <small id="passHelp" class="form-text text-muted">{{$message}}</small>
 
-                            @enderror
                             @error("password")
-                            <small id="passHelp" class="form-text text-muted">{{$message}}</small>
+                            <small id="passHelp" class="form-text text-danger">{{$message}}</small>
 
                             @enderror
+
+                            @if(session()->has('invalid'))
+                                <small id="passHelp" class="form-text text-danger">{{session()->get('invalid')}}
+                                </small>
+                            @endif
                         </div>
                     </div>
                 </div>

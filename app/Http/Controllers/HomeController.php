@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Challenge;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view("dashboard");
+        $chall = Challenge::select("title","score","description","category","hint")->get();
+        return view("dashboard",compact("chall"));
     }
 
     public function admin()

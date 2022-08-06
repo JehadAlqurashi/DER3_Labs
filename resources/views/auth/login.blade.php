@@ -39,7 +39,7 @@
                     </button>
                     <form>
 
-                    <small id="registerHelp" class="mt-3 form-text text-muted">Not Registered? <a href="register.html">Register here</a></small>
+                    <small id="registerHelp" class="mt-3 form-text text-muted">Not Registered? <a href="{{route('register')}}">Register here</a></small>
                 </div>
             </div>
         </div>
