@@ -70,12 +70,5 @@ class ScoreController extends Controller
         }
 
 
-        public function hackerboard(){
-            $user = User::get();
-            return $user;
-
-
-        }
-
 
 }

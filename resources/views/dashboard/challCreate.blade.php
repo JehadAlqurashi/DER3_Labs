@@ -47,6 +47,10 @@
             @enderror
 
         </div>
+
+
+
+
         <div class="form-group">
             <label for="exampleInputPassword1">Category</label>
             <select name="category">
@@ -55,6 +59,30 @@
                 <option value="Crypto">Crypto</option>
             </select>
             @error("category")
+            <small id="emailHelp" class="form-text text-danger">{{$message}}</small>
+            @enderror
+
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">link</label>
+                <input style="font-size: 20px" name="link" type="text" class="form-control" id="hint" >
+                @error("link")
+                <small id="score" class="form-text text-muted">{{$message}}</small>
+                @enderror
+                @csrf
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">difficulty</label>
+            <select name="difficulty">
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+            @error("difficulty")
             <small id="emailHelp" class="form-text text-danger">{{$message}}</small>
             @enderror
 

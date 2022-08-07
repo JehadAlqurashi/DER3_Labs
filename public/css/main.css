@@ -65,6 +65,11 @@ body {
     border: 1px solid #17b06b;
     color: white;
 }
+.category{
+    background: #0d6843;
+    padding: 3px;
+    border-radius: 30px;
+}
 
 .badge {
     border: 1px solid #87c4f2;
@@ -119,15 +124,35 @@ body {
     text-decoration: none;
     color: inherit;
 }
+.category-Osint{
+    background: green;
+}
+.category-Web{
+    background: red;
+}
+
+.category-Crypto{
+
+    background: #593d99;
+}
 
 .category_misc {
     border-top: 4px solid #ffce5694;
+
 }
 
 .category_crypt {
     border-top: 4px solid #9966FF94;
 }
-
+.Easy{
+    color:green;
+}
+.Medium{
+    color:yellow;
+}
+.Hard{
+    color:red;
+}
 .hackerFont {
     font-family: Hack, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
@@ -135,6 +160,7 @@ body {
 .color_danger {
     color: #ef121b;
 }
+
 
 .color_white {
     color: white;

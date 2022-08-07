@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('title');
             $table->integer('score');
             $table->string('description');
+            $table->string('link');
+            $table->enum("difficulty",['Easy','Medium','Hard']);
             $table->enum("category",['Web','Osint','Crypto']);
             $table->string('hint');
             $table->timestamps();

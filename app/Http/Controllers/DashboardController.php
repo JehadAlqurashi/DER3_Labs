@@ -55,7 +55,7 @@ class DashboardController extends Controller
 
     ######################Challenge######################
     public function challenge(){
-        $chall = Challenge::select("id","title","score","category","description","hint")->get();
+        $chall = Challenge::select("id","title","score","category","description","hint","link")->get();
 
         return view("dashboard.challenge",compact("chall"));
     }

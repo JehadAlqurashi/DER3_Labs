@@ -18,6 +18,7 @@
                 <th scope="col">description</th>
                 <th scope="col">category</th>
                 <th scope="col">hint</th>
+                <th scope="col">difficulty</th>
                 <th scope="col">Action</th>
 
             </tr>
@@ -31,6 +32,7 @@
                 <td>{{$ch->description}}</td>
                 <td>{{$ch->category}}</td>
                 <td>{{$ch->hint}}</td>
+                <td>{{$ch->difficulty}}</td>
                 <td>
                     <a href="{{route("dashboard.challenge.edit",$ch->id)}}" class="btn btn-success">Edit</a>
                     <a href="{{route("dashboard.challenge.delete",$ch->id)}}" class="btn btn-danger">Delete</a>

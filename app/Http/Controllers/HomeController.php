@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $chall = Challenge::select("title","score","description","category","hint")->get();
+        $chall = Challenge::select("title","score","description","category","hint","difficulty","link")->get();
         return view("dashboard",compact("chall"));
     }
 

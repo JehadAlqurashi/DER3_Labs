@@ -22,9 +22,8 @@
                         <thead class="thead-dark hackerFont">
                             <tr>
                                 <th>#</th>
-                                <th>Team Name</th>
+                                <th>Name</th>
                                 <th># Challenges Solved</th>
-                                <th>Total Time Taken</th>
                                 <th>Score</th>
                             </tr>
                         </thead>
@@ -33,28 +32,24 @@
                                 <th scope="row">1</th>
                                 <td>liveoverflow</td>
                                 <td>8</td>
-                                <td>42:59</td>
                                 <td>2540</td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
                                 <td>CR007</td>
                                 <td>6</td>
-                                <td>44:59</td>
                                 <td>1900</td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
                                 <td>anonymous</td>
                                 <td>4</td>
-                                <td>40:00</td>
                                 <td>650</td>
                             </tr>
                             <tr>
                                 <th scope="row">4</th>
                                 <td>ashawe</td>
                                 <td>5</td>
-                                <td>40:10</td>
                                 <td>550</td>
                             </tr>
                         </tbody>

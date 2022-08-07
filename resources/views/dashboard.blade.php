@@ -16,21 +16,23 @@
                     <h4>Challenges</h4>
                 </div>
                 @foreach($chall as $c)
+
                 <div class="col-md-4 mb-3">
                     <div class="card category_web">
-                        <div class="card-header solved" data-target="#problem_id_1" data-toggle="collapse" aria-expanded="false" aria-controls="problem_id_1">
-                            {{$c->title}} <span class="badge">solved</span> <span class="badge">{{$c->score}} points</span>
+                         <div class="card-header solved" data-target="#problem_id_1" data-toggle="collapse" aria-expanded="false" aria-controls="problem_id_1">
+                            {{$c->title}}  <span class="badge">{{$c->score}} points</span> <span class="category category-{{$c->category}}">{{$c->category}}</span>
                         </div>
                         <div id="problem_id_1" class="collapse card-body">
                             <blockquote class="card-blockquote">
                                 <div style="display: flex;">
-                                    <h6 class="solvers">Solvers: <span class="solver_num">76</span> &nbsp;<span class="color_danger">Difficulty:</span></h6>
+                                    <h6 class="solvers">Solvers: <span class="solver_num"></span><span class="color_danger">Difficulty:<span class="difficulty {{$c->difficulty}}">{{$c->difficulty}} </h6>
                                     <div class="pl-2"><canvas style="width:80px;height:20px" id="problem_id_1_chart"></canvas></div>
                                 </div>
-                                <p>
+                                <p> Description:
                                     {{$c->description}}
                                 </p>
-                                <a target="_blank" href="#!" class="btn btn-outline-secondary btn-shadow"><span class="fa fa-download mr-2"></span>Download</a>
+                                {{--<a target="_blank" href="{{$c->link}}" class="btn btn-outline-secondary btn-shadow"><span class="fa fa-challenge mr-2"></span>Challenge</a>--}}
+                                challenge:{{$c->link}}
                                 <a href="#hint" data-toggle="modal" data-target="#hint" class="btn btn-outline-secondary btn-shadow"><span class="far fa-lightbulb mr-2"></span>Hint</a>
                                 <div class="input-group mt-3">
                                     <input type="text" class="form-control" placeholder="DER3{}" aria-label="Enter Flag" aria-describedby="basic-addon2">
@@ -42,34 +44,30 @@
                         </div>
                     </div>
                 </div>
+                    <div class="modal fade" id="hint" tabindex="-1" role="dialog" aria-labelledby="hint label" style="display: none;" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    {{$c->hint}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
             <div class="row hackerFont justify-content-center mt-5">
                 <div class="col-md-12">
                     Chart Difficulties:
-                    <span style="color:#17b06b">Very Easy,</span>
                     <span style="color:#17b06b">Easy,</span>
                     <span style="color:#ffce56">Medium,</span>
                     <span style="color:#ef121b">Hard,</span>
-                    <span style="color:#ef121b">Very Hard,</span>
                     <br><br>Challenge Types:
                     <span class="p-1" style="background-color:#ef121b94">Web</span>
-                    <span class="p-1" style="background-color:#17b06b94">Reversing</span>
-                    <span class="p-1" style="background-color:#f9751594">Steganography</span>
-                    <span class="p-1" style="background-color:#36a2eb94">Pwning</span>
+                    <span class="p-1" style="background-color:#17b06b94">Osint</span>
                     <span class="p-1" style="background-color:#9966FF94">Cryptography</span>
-                    <span class="p-1" style="background-color:#ffce5694">Other</span>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="hint" tabindex="-1" role="dialog" aria-labelledby="hint label" style="display: none;" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        {{$c->hint}}
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <script>
             var dataset = [
                 [41, 42, 43, 44, 45, 0], // keep the zero here

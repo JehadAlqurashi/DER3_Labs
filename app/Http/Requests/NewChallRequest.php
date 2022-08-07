@@ -30,6 +30,8 @@ class NewChallRequest extends FormRequest
             "description" => ['required'],
             "hint" => ['required'],
             "flag" => ['required'],
+            "difficulty" => ['required'],
+            "link" => ['required']
         ];
 
 

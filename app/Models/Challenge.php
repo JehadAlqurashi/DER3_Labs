@@ -16,6 +16,8 @@ class Challenge extends Model{
         'description',
         'category',
         'hint',
+        'difficulty',
+        'link'
     ];
 
      /*public function attachments(){
