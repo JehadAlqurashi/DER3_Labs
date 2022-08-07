@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $chall = Challenge::select("title","score","description","category","hint","difficulty","link")->get();
+        $chall = Challenge::select("id","title","score","description","category","hint","difficulty","link")->get();
         return view("dashboard",compact("chall"));
     }
 
@@ -31,4 +31,10 @@ class HomeController extends Controller
     {
         return view ("admin");
     }
+    public function redirecting($id){
+        $link = Challenge::whereId("$id")->value("link");
+        return redirect()->away($link);
+
+    }
+
 }

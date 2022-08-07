@@ -104,15 +104,12 @@ body {
     border-top: 4px solid #ef121b94;
 }
 
-.category_reversing {
-    border-top: 4px solid #17b06b94;
-}
 
 .category_steg {
     border-top: 4px solid #f9751594;
 }
 
-.category_pwning {
+.category_osint {
     border-top: 4px solid #00a09994;
 }
 
@@ -131,7 +128,7 @@ body {
     background: red;
 }
 
-.category-Crypto{
+.category-crypto{
 
     background: #593d99;
 }
@@ -141,7 +138,7 @@ body {
 
 }
 
-.category_crypt {
+.category_Crypto {
     border-top: 4px solid #9966FF94;
 }
 .Easy{

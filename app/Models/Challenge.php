@@ -20,14 +20,10 @@ class Challenge extends Model{
         'link'
     ];
 
-     /*public function attachments(){
+    public function chall (){
+        return $this->hasMany("App\Models\Solve","challenge_id");
 
-        return $this->belongsTo('App\Models\Attachment');
     }
-
-    /* public function solved(){
-        return $this->belongsTo('App\Models\Solve', 'challenge_id');
-    } */
 
 
 

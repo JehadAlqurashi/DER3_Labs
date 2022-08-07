@@ -53,15 +53,7 @@ class User extends Authenticatable
     }
 
 
-    /* public function solved(){
-
-        return $this->belongsTo('App\Models\Solved','challenge_id');
-
+    public function solve(){
+        return $this->hasMany("App\Models\Solve","user_id");
     }
-
-    public function users(){
-
-        return $this->belongsTo('App\Models\Challenge','user_id');
-
-    }*/
 }
