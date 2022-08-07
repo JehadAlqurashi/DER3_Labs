@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Challenge;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $chall = Challenge::select("id","title","score","description","category","hint","difficulty","link")->get();
+
         return view("dashboard",compact("chall"));
     }
 
