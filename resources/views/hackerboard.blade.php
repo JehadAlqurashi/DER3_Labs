@@ -1,6 +1,5 @@
 @extends("auth.section.section")
 @section("content")
-{{$user}}
     <div class="jumbotron bg-transparent mb-0 pt-3 radius-0">
         <div class="container">
             <div class="row">
@@ -28,30 +27,14 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach($user as $u)
                             <tr>
-                                <th scope="row">1</th>
-                                <td>liveoverflow</td>
-                                <td>8</td>
-                                <td>2540</td>
+                                <th scope="row">{{$u->row}}</th>
+                                <td>{{$u->name}}</td>
+                                <td>{{$u->solve}}</td>
+                                <td>{{$u->score}}</td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>CR007</td>
-                                <td>6</td>
-                                <td>1900</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>anonymous</td>
-                                <td>4</td>
-                                <td>650</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>ashawe</td>
-                                <td>5</td>
-                                <td>550</td>
-                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
