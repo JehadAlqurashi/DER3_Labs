@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 use App\Models\Challenge;
 use http\Client\Curl\User;
+use App\Models\User as UserLogin;
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -25,8 +27,10 @@ class HomeController extends Controller
     public function index()
     {
         $chall = Challenge::select("id","title","score","description","category","hint","difficulty","link")->get();
-
-        return view("dashboard",compact("chall"));
+        $user = UserLogin::select("id")->with(['solve'=>function($q){
+            $q->select("challenge_id","user_id");
+        }])->whereId(Auth::id())->first();
+        return view("dashboard",compact("chall","user"));
     }
 
     public function admin()

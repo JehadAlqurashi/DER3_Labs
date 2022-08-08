@@ -24,7 +24,15 @@
             <div class="col-md-4 mb-3">
                 <div class="card category_{{strtolower($c->category)}}">
                     <div class="card-header" data-target="#problem_id_{{$c->id}}" data-toggle="collapse" aria-expanded="false" aria-controls="problem_id_{{$c->id}}">
-                   {{$c->title}}{{--      <span class="badge">solved</span> <span class="badge">{{$c->score}}</span>--}}
+                   {{$c->title}}
+
+                        @foreach($user->solve as $solve)
+
+                            @if($solve->challenge_id == $c->id)
+                            <span class="badge">solved</span>
+                            @endif
+                        @endforeach
+                        <span class="badge">{{$c->score}}</span>
                     </div>
                     <div id="problem_id_{{$c->id}}" class="collapse card-body">
                         <blockquote class="card-blockquote">

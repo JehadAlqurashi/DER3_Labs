@@ -1,6 +1,6 @@
 @extends("auth.section.section")
 @section("content")
-
+{{$user}}
     <div class="jumbotron bg-transparent mb-0 pt-3 radius-0">
         <div class="container">
             <div class="row">

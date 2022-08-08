@@ -11,6 +11,7 @@ class Solve extends Model
     use HasFactory;
     protected $table = "solved";
     protected $fillable = ['id', 'challenge_id', 'user_id'];
+    protected $hidden = ['user_id'];
 
 
     public function user(){

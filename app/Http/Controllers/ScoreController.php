@@ -1,15 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Challenge;
-use App\Models\Solved;
+use App\Models\Solve;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class ScoreController extends Controller
 {
     public function index(){
-        return view("hackerboard");
+
+       $user =  DB::table("solved")->join("users","users.id" ,"=","solved.user_id")
+           ->select("users.name",DB::raw("COUNT(users.name)"))->groupBy('users.id')->get();
+
+
+        return view("hackerboard",compact("user"));
     }
 
     ///  Calculates the score for each individual player.
