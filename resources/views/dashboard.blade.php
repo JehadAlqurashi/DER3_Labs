@@ -49,7 +49,7 @@
                             <div class="input-group mt-3">
                                     @csrf
                                     <input type="hidden" name="challenge_id" value="{{$c->id}}">
-                                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                                    
                                 <input type="text" name="flag" class="form-control" placeholder="DER3{}" aria-label="Enter Flag" aria-describedby="basic-addon2"><button style="margin-left:3px" id="submit_p1" class="btn btn-outline-secondary" >Go!</button>
 
                             </div>

@@ -6,10 +6,11 @@ use App\Models\User;
 use App\Models\Solve;
 use Illuminate\Http\Request;
 use function PHPUnit\Framework\isEmpty;
-
+use Auth;
 class FlagController extends Controller
 {
     public function flag(Request $request){
+
         $chall = Challenge::where('flag',$request->flag)->get();
         $chall = json_decode($chall,true);
         if(empty($chall)){
@@ -17,7 +18,7 @@ class FlagController extends Controller
         }
          // Check if the flag is already Submit
 
-        $check=Solve::where("challenge_id",$request->challenge_id)->where("user_id",$request->user_id)->get();
+        $check=Solve::where("challenge_id",$request->challenge_id)->where("user_id",Auth::id())->get();
         $check = json_decode($check,true);
 
         if(!empty($check)){

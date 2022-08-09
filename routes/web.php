@@ -21,12 +21,12 @@ Route::get("/", function (){
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get("/admin",[App\Http\Controllers\AdminLoginController::class,"index"]);
-Route::get("/redirect/{url}",[App\Http\Controllers\HomeController::class,"redirecting"])->name("redirect");
 Route::post("/admin/login",[App\Http\Controllers\AdminLoginController::class,"login"])->name("admin.login");
-Route::post("/submit/flag",[App\Http\Controllers\FlagController::class,"flag"])->name("submit.flag");
 
 Route::group(["middleware" =>"auth:web"],function (){
     Route::get("/score",[App\Http\Controllers\ScoreController::class,"index"])->name("score");
+    Route::post("/submit/flag",[App\Http\Controllers\FlagController::class,"flag"])->name("submit.flag");
+    Route::get("/redirect/{url}",[App\Http\Controllers\HomeController::class,"redirecting"])->name("redirect");
 
 });
 Route::group(['prefix'=>"dashboard",'middleware'=>['auth:admin']],function(){
